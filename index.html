@@ -1,0 +1,519 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script
+      src="https://code.jquery.com/jquery-3.7.1.min.js"
+      integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo="
+      crossorigin="anonymous"
+    ></script>
+    <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.min.js"></script>
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.13.0/themes/smoothness/jquery-ui.css">
+    <link rel="stylesheet" href="main.css">
+  </head>
+  <div id="all-background-container">
+    <div class="both-container">
+      <div class="musicplayer">
+          <div class="lyrics-pop">
+              <p class="songLyrics" id="songLyrics1">전화를 할까 말까 문자로 할까</p>
+              <p class="songLyrics" id="songLyrics2">아 시간이 너무 늦었나</p>
+              <p class="songLyrics" id="songLyrics3">그녀는 벌써 잘까</p>
+          </div>
+        <div class="music_pink_Top">
+          <div class="circle1"></div>
+          <div class="circle2"></div>
+        </div>
+        <div
+          class="Now_Playing"
+          style="
+            font-size: 15px;
+            /* font-weight: 800; */
+            color: #fff7e2;
+            font-family: 'DNFBitBitv2';
+            margin-top: 30px;
+            text-align: center;
+            text-shadow: -1px 0 #555, 0 1px #555, 1px 0 #555, 0 -1px #555;
+          "
+        >
+          Now Playing
+        </div>
+        <div class="pink_container2">
+          <div class="music-content">
+            <div class="music_yellow_Top">
+              <div class="c1"></div>
+              <div class="c2"></div>
+            </div>
+            <div id="music_CD"></div>
+            <div class="music_info">
+              <div class="music_nNs">
+                <p id="music_name">
+                  ? (물음표) (Feat. 최자 of 다이나믹듀오, Zion.T)
+                </p>
+                <p
+                  id="music_singer"
+                  style="
+                    /* margin-top: -15px; */
+                    font-size: 14px;
+                    font-weight: 450;
+                    color: #555555;
+                    text-align: center;
+                  "
+                >
+                  프라이머리
+                </p>
+              </div>
+
+              <div
+                id="current_bar"
+                style="
+                  width: 170px;
+                  margin: 0 9px;
+                  height: 5px;
+                  background-color: #ffb5b5;
+                  border-radius: 10px;
+                "
+              >
+                <div
+                  style="
+                    background-color: #ff7e7e;
+                    width: 0;
+                    height: 5px;
+                    border-radius: 10px;
+                  "
+                ></div>
+              </div>
+              <div id="current_progress">
+                <!-- <div class="currentTime">0:45</div>
+                <div class="duration">- 2:34</div> -->
+              </div>
+            </div>
+
+            <div class="music_btns">
+              <button id="btn_m10"></button>
+              <button id="btn_play"></button>
+              <button id="btn_p10"></button>
+            </div>
+            <div class="c3"></div>
+            <div class="c4"></div>
+          </div>
+        </div>
+        <div class="circle3"></div>
+        <div class="circle4"></div>
+      </div>
+      <div class="jackpot_machine">
+        <div class="jackpot">
+          <div class="bigcircletop">
+            <div class="circle1"></div>
+            <div class="circle2"></div>
+          </div>
+          <div class="con1">
+            <div class="sign">
+              <div class="circletop">
+                <div class="c1"></div>
+                <div class="c2"></div>
+              </div>
+              <div class="title">MUSIC PLAYER</div>
+              <div class="title2">MACHINE</div>
+              <div class="c3"></div>
+              <div class="c4"></div>
+            </div>
+
+            <div class="machine">
+              <div class="circletop">
+                <div class="c1"></div>
+                <div class="c2"></div>
+              </div>
+
+              <div class="spin">
+                <div id="firstIcon">
+                  🌶<br />🛁<br />👑<br />🩸<br />👃<br />🍳<br />🌶<br />🛁<br />👑<br />🩸<br />👃<br />🍳<br />🌶<br />🛁<br />👑<br />🩸<br />👃<br />🍳<br />🌶<br />🛁<br />👑<br />🩸<br />👃<br />🍳
+                </div>
+                <div id="reel_container_first">❓</div>
+                <div id="secondIcon">
+                  👑<br />🩸<br />👃<br />🛁<br />🩸<br />🌶<br />🍳<br />👃<br />👑<br />🍳<br />🌶<br />👑<br />🩸<br />🍳<br />🛁<br />👃<br />🌶<br />🛁<br />👑<br />🩸<br />👃<br />🍳<br />🌶<br />🛁
+                </div>
+                <div id="reel_container_second">❓</div>
+                <div id="thirdIcon">
+                  👃<br />🍳<br />👑<br />🛁<br />🌶<br />👃<br />🍳<br />🌶<br />🩸<br />🛁<br />👑<br />👃<br />🩸<br />🍳<br />🛁<br />🩸<br />🌶<br />🍳<br />👑<br />👃<br />🛁<br />🌶<br />👑<br />🩸
+                </div>
+                <div id="reel_container_third">❓</div>
+              </div>
+
+              <div class="c3"></div>
+              <div class="c4"></div>
+            </div>
+          </div>
+          <div class="circle3"></div>
+          <div class="circle4"></div>
+          <div class="star-pop">
+            <p id="star">⭐️ ⭐️ ⭐️</p>
+          </div>
+          
+        </div>
+
+        <div class="startBtn">
+          <div class="explain_click">Click Here!</div>
+          <div class="start_bar">
+            <div class="start_explain">
+              <button type="button" id="start"></button>
+            </div>
+            <div class="thin_stick"></div>
+          </div>
+          <div class="bottom_stick"></div>
+        </div>
+      </div>
+    </div>
+    <div class="glitter">
+      <div class="glitterImage-1"></div>
+      <div class="glitterImage-2"></div>
+      <div class="glitterImage-3"></div>
+      <div class="glitterImage-4"></div>
+      <div class="glitterImage-5"></div>
+    </div>
+    <div id="Containers">
+      <div class="container"></div>
+      <div class="container"></div>
+      <div class="container"></div>
+      <div class="container"></div>
+      <div class="container"></div>
+      <div class="container"></div>
+      <div class="container"></div>
+      <div class="container"></div>
+      <div class="container"></div>
+      <div class="container"></div>
+      <div class="container"></div>
+      <div class="container"></div>
+      <div class="container"></div>
+      <div class="container"></div>
+      <div class="container"></div>
+      <div class="container"></div>
+      <div class="container"></div>
+      <div class="container"></div>
+      <div class="container"></div>
+      <div class="container"></div>
+      <div class="container"></div>
+      <div class="container"></div>
+      <div class="container"></div>
+      <div class="container"></div>
+      <div class="container"></div>
+      <div class="container"></div>
+      <div class="container"></div>
+      <div class="container"></div>
+      <div class="container"></div>
+      <div class="container"></div>
+      <div class="container"></div>
+      <div class="container"></div>
+      <div class="container"></div>
+      <div class="container"></div>
+      <div class="container"></div>
+      <div class="container"></div>
+      <div class="container"></div>
+      <div class="container"></div>
+      <div class="container"></div>
+      <div class="container"></div>
+    </div>
+  </div>
+  <audio id="spinSound" src="./musics_1/spin-sound.mp3"></audio>
+
+</body>
+
+<script>
+  
+    
+    
+    //음악 아이콘 배열
+    let musicIcon = [
+        { one: "🌶", two: "🥵", three: "🌶" },
+        { one: "🛁", two: "🛁", three: "🍿" },
+        { one: "👑", two: "👸🏻", three: "👑" },
+        { one: "🩸", two: "💦", three: "😭" },
+        { one: "👃", two: "👃", three: "🍚" },
+        { one: "🍳", two: "💤", three: "💭" },
+      ];
+  
+      //재생목록 배열
+      let audios = [
+        {
+          audio: "./musics_1/Spicy - aespa.mp3",
+          image: "./image_1/spicy.png",
+          title: "Spicy",
+          author: "asepa",
+          backgroundColor: "#FFF6DF", // 노랑
+          lyrics1 : "Cause I'm too spicy",
+          lyrics2 : "for your heart",
+          lyrics3 : "심장을 파고들어 넌",
+          containerColor : "#FFF0CB"
+        },
+        {
+          audio: "./musics_1/Bubble Pop! - 현아.mp3",
+          image: "./image_1/bubblepop.png",
+          title: "Bubble Pop!",
+          author: "현아",
+          backgroundColor: "#FFDFDF", // 빨강
+          lyrics1 : "너에게 날 맞추진 마",
+          lyrics2 : "나에게 더 바라진 마",
+          lyrics3 : "거품처럼 커진 맘을",
+          containerColor : "#FFD1D1"
+        },
+        {
+          audio: "./musics_1/퀸카 - (여자)아이들.mp3",
+          image: "./image_1/queencard.png",
+          title: "퀸카 (Queencard)",
+          author: "(여자)아이들",
+          backgroundColor: "#CBE6FB", // 분홍
+          lyrics1 : "퀸카 I'm hot",
+          lyrics2 : "My boob and booty is hot",
+          lyrics3 : "Spotlight 날 봐",
+          containerColor : "#FFD2E7"
+        },
+        {
+          audio: "./musics_1/피 땀 눈물 - BTS.mp3",
+          image: "./image_1/blood.png",
+          title: "피 땀 눈물",
+          author: "BTS",
+          backgroundColor: "#FFFAF2", // 노랑
+          lyrics1 : "내 피 땀 눈물",
+          lyrics2 : "내 마지막 춤을",
+          lyrics3 : "다 가져가 가",
+          containerColor : "#FFF3DB"
+        },
+        {
+          audio: "./musics_1/Ko Ko Bop - EXO.mp3",
+          image: "./image_1/kokobop.png",
+          title: "Ko Ko Bop",
+          author: "EXO",
+          backgroundColor: "#FFEBDF", // 주황
+          lyrics1 : "Down down baby",
+          lyrics2 : "리듬에 온몸을",
+          lyrics3 : "It goes down down baby",
+          containerColor : "#FFDCC8"
+        },
+        {
+          audio: "./musics_1/후라이의 꿈 - AKMU.mp3",
+          image: "./image_1/dream.png",
+          title: "후라이의 꿈",
+          author: "AKMU(악뮤)",
+          backgroundColor: "#FFEDF2", // 분홍
+          lyrics1 : "난 차라리 흘러갈래",
+          lyrics2 : "모두 높은 곳을 우러러볼 때",
+          lyrics3 : "난 내 물결을 따라",
+          containerColor : "#FFD5DF"
+        },
+      ];
+  
+  
+      //말풍선, 글리터, 컨테이너 숨기기
+      $(".lyrics-pop").hide();
+      $(".star-pop").hide();
+      $(".glitter").hide();
+      $("#Containers").hide();
+  
+      //현재 재생 중인 음악
+      let currentAudio = new Audio();
+  
+      let audio = new Audio("./musics_1/question mark - 프라이머리.mp3");
+      currentAudio.pause();
+      currentAudio = audio;
+      currentAudio.currentTime = 0;
+
+      
+
+
+
+  
+      // 버튼 이벤트
+      $("#btn_play").click(function () {
+        if (currentAudio.paused == true) {
+          currentAudio.play();
+          $("#music_CD").css("animation", "rotate_CD 3s linear infinite");
+          // 일시정지 상태에서 재생 중 상태로 변경되면 이미지를 pause_btn.png로 변경
+          $("#btn_play").css(
+            "background-image",
+            "url('./image_1/pause_btn.png')"
+          );
+          //가사창, 별창, 글리터 보이기
+          $(".lyrics-pop").show();
+          $(".star-pop").show();
+          $(".glitter").show();
+          $("#Containers").show();
+        } else {
+          currentAudio.pause();
+          $("#music_CD").css("animation-play-state", "paused");
+          // 재생 중 상태에서 일시정지 상태로 변경되면 이미지를 play_btn.png로 변경
+          $("#btn_play").css("background-image", "url('./image_1/play_btn.png')");
+          //말풍선, 글리터 숨기기
+          $(".lyrics-pop").hide();
+          $(".star-pop").hide();
+          $(".glitter").hide();
+          $("#Containers").hide();
+        }
+      });
+  
+  
+      $("#btn_m10").click(function () {
+        // 10초 전
+        currentAudio.currentTime -= 10;
+      });
+      
+      $("#btn_p10").click(function () {
+        // 10초 후
+        currentAudio.currentTime += 10;
+      });
+  
+  
+      $(document).ready(function () {
+        function setPlaybackTime(event) {
+          var barWidth = $("#current_bar").innerWidth();
+          var clickX = event.clientX - $("#current_bar").offset().left;
+          var newTime = (clickX / barWidth) * currentAudio.duration;
+  
+          // Set the new playback time
+          currentAudio.currentTime = newTime;
+        }
+  
+        $("#current_bar").click(function (event) {
+          setPlaybackTime(event);
+        });
+  
+        //#current_progress의 시간 업데이트
+        setInterval(function () {
+          // 현재시간, 지속시간 -> 동적 업데이트
+          let currentTime = formatTime(currentAudio.currentTime);
+          let duration = formatTime(currentAudio.duration);
+  
+          $("#current_progress").html(
+            `<div class="currentTime">${currentTime}</div><div class="duration"> ${duration}</div>`
+          );
+  
+          let barWidth = $("#current_bar").innerWidth();
+          $("#current_bar > div").css(
+            "width",
+            (barWidth * currentAudio.currentTime) / currentAudio.duration
+          );
+        }, 50);
+      });
+  
+      //시간 -> MM:SS 형식
+      function formatTime(time) {
+        let minutes = Math.floor(time / 60);
+        let seconds = Math.floor(time % 60);
+        return `${String(minutes).padStart(2, "0")}:${String(seconds).padStart(
+          2,
+          "0"
+        )}`;
+      }
+  
+      //잭팟
+      $("#start").click(function () {
+        $("#reel_container_first").css("opacity", 0)
+                                  .css ("background", "linear-gradient(180deg, #FFF 71.73%, rgba(255, 255, 255, 0.00) 88.65%)");
+        $("#reel_container_second").css("opacity", 0)
+                                  .css ("background", "linear-gradient(180deg, #FFF 71.73%, rgba(255, 255, 255, 0.00) 88.65%)");
+        $("#reel_container_third").css("opacity", 0)
+                                  .css ("background", "linear-gradient(180deg, #FFF 71.73%, rgba(255, 255, 255, 0.00) 88.65%)");
+        
+        //말풍선, 글리터 숨기기
+        $(".lyrics-pop").hide();
+        $(".star-pop").hide();
+        $(".glitter").hide();
+        $("#Containers").hide();
+        
+        currentAudio.pause();
+        $("#music_CD").css("animation", "none");
+  
+        function randomValueFromArray(array) {
+          let random = Math.floor(Math.random() * array.length);
+          return array[random];
+        }
+  
+        let musicIcon_set = randomValueFromArray(musicIcon);
+        console.log(musicIcon_set);
+
+
+  
+        setTimeout(function () {
+          $("#reel_container_first")
+            .animate({ "margin-top": "-100%", opacity: 1, width: "130px"}, 0)
+            .animate({ "margin-top": 0, backgroundColor: "white" }, 1000)
+          $("#reel_container_second")
+            .delay(500)
+            .animate({ "margin-top": "-100%", opacity: 1, width: "130px" }, 0)
+            .animate({ "margin-top": 0, backgroundColor: "white"  }, 1000);
+          $("#reel_container_third")
+            .delay(1000)
+            .animate({ "margin-top": "-100%", opacity: 1, width: "130px" }, 0)
+            .animate({ "margin-top": 0, backgroundColor: "white"  }, 1000);
+  
+          $("#reel_container_first").text(musicIcon_set.one);
+          $("#reel_container_second").text(musicIcon_set.two);
+          $("#reel_container_third").text(musicIcon_set.three);
+  
+          setTimeout(function () {
+            //가사창, 별창, 글리터 보이기
+            $(".lyrics-pop").show();
+            $(".star-pop").show();
+            $(".glitter").show();
+            $("#Containers").show();
+
+            for (let i = 0; i < musicIcon.length; i++) {
+              if (musicIcon_set === musicIcon[i]) {
+                $("#music_name").text(audios[i].title);
+                $("#music_singer").text(audios[i].author);
+                $("#btn_play").css(
+                  "background-image",
+                  "url('./image_1/pause_btn.png')"
+                );
+                $("#music_name").css("animation", "none");
+                $("#songLyrics1").text(audios[i].lyrics1);
+                $("#songLyrics2").text(audios[i].lyrics2);
+                $("#songLyrics3").text(audios[i].lyrics3);
+  
+                // 변경된 부분: 배경색 변경
+                $("#all-background-container").css(
+                  "background-color",
+                  audios[i].backgroundColor
+                );
+
+                $(".container").css(
+                  "background-color",
+                  audios[i].containerColor
+                );
+  
+                $("#music_CD")
+                  .css("background-image", "url(" + audios[i].image + ")")
+                  .css("animation", "rotate_CD 3s linear infinite");
+
+                let audio = new Audio(audios[i].audio);
+                
+                currentAudio.pause();
+                currentAudio = audio;
+                currentAudio.currentTime = 0;
+                currentAudio.play();
+
+
+              }
+            }
+          }, 2200);
+        }, 2000); //0->2000추가
+      });
+  
+      $("#start").click(function () {
+        $(".startBtn").addClass("clicked");
+        $(".explain_click").hide();
+          
+        setTimeout(function () {
+            $(".startBtn").removeClass("clicked");
+        }, 3000);
+         // audio 요소 가져오기
+        var spinSound = new Audio("./musics_1/spin-sound.mp3");
+
+        // 음악 재생
+        spinSound.play();
+     });
+
+
+
+</script>
+</html>

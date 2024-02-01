@@ -1,0 +1,780 @@
+
+  @import url("https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard-dynamic-subset.min.css");
+
+  @font-face {
+    font-family: "DNFBitBitv2";
+    font-style: normal;
+    font-weight: 400;
+    src: url("https://cdn.df.nexon.com/img/common/font/DNFBitBitv2.otf")
+      format("opentype");
+  }
+
+  * {
+    padding: 0;
+    margin: 0;
+    font-family: "Pretendard";
+    box-sizing: border-box;
+  }
+
+  #all-background-container {
+    display: flex;
+    width: 100%;
+    height: 100vh;
+    min-height: 546px;
+    background-color: #FFF0DF;
+    transform: scale(1);
+    /*scale 스케일 추가 */
+  }
+
+  .both-container {
+    display: flex;
+    gap: 3vw;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  .musicplayer {
+    width: 264px;
+    border-radius: 10px;
+    height: 430px;
+    background-color: #ffb5b5;
+    border: 2px solid #555;
+  }
+  .musicplayer {
+    position: relative;
+  }
+
+  .pink_container2 {
+    margin-left: 20px;
+    margin-top: 20px;
+    width: 220px;
+    border-radius: 10px;
+    height: 320px;
+    background-color: #ff7e7e;
+    border: 1px solid #555;
+  }
+  .music-content {
+    margin-left: 13px;
+    margin-top: 13px;
+    width: 190px;
+    border-radius: 10px;
+    height: 290px;
+    background-color: #ffebdf;
+    border: 1px solid #555;
+  }
+  .music-content {
+    position: relative;
+  }
+  #music_CD {
+    margin-top: 10px;
+    width: 110px;
+    border-radius: 110px;
+    margin: 20px 40px 14px;
+    height: 110px;
+    /* background-color: #fff; */
+    background-image: url("./image_1/Question.png");
+    background-size: cover; /* 배경 이미지를 컨테이너에 맞게 늘리거나 축소 */
+    background-position: center; /* 배경 이미지를 가운데 정렬 */
+    animation: none;
+    box-shadow: 0px 0px 10px 0px #ffb5b5;
+  }
+  .music_info {
+    display: inline-flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+    /* background-color: #555; */
+  }
+  .music_nNs {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    overflow: hidden;
+  }
+
+  #music_name {
+    font-size: 15px;
+    color: #555;
+    text-align: center;
+    font-weight: 800;
+    white-space: nowrap;
+    width: 170px;
+    height: 18px;
+    animation: flow 10s linear infinite;
+  }
+
+  #current_progress {
+    padding: 2px 4px;
+    width: 170px;
+    margin-top: -15px;
+    display: flex; /* flex container로 설정 */
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  #current_progress .currentTime {
+    font-size: 12px;
+    font-weight: 640;
+    color: #888;
+  }
+
+  #current_progress .duration {
+    font-size: 12px;
+    font-weight: 640;
+    color: #888;
+  }
+
+  .music_btns {
+    /*margin-top: 20px;*/
+    width: 188px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 4px;
+  }
+  #btn_m10 {
+    background-color: #ffebdf;
+    background-image: url("./image_1/minus_btn.png");
+    background-size: cover; /* 배경 이미지를 버튼 크기에 맞게 조절 */
+    width: 30px;
+    height: 30px;
+    border: none; /* 기존의 버튼 스타일 초기화 */
+    cursor: pointer; /* 마우스 포인터를 손가락 모양으로 변경 */
+  }
+  #btn_play {
+    border-radius: 40px;
+    background: #ff7e7e;
+    background-image: url("./image_1/play_btn.png");
+    background-size: cover; /* 배경 이미지를 버튼 크기에 맞게 조절 */
+    width: 40px;
+    height: 40px;
+    border: none; /* 기존의 버튼 스타일 초기화 */
+    cursor: pointer; /* 마우스 포인터를 손가락 모양으로 변경 */
+  }
+  #btn_p10 {
+    background-color: #ffebdf;
+    background-image: url("./image_1/plus_btn.png");
+    background-size: cover; /* 배경 이미지를 버튼 크기에 맞게 조절 */
+    width: 30px;
+    height: 30px;
+    border: none; /* 기존의 버튼 스타일 초기화 */
+    cursor: pointer; /* 마우스 포인터를 손가락 모양으로 변경 */
+  }
+  .jackpot {
+    width: 650px;
+    height: 430px;
+    border-radius: 10px;
+    background-color: #ffb5b5;
+    border: 2px solid #555;
+    z-index: 3; /*추가*/
+  }
+  .jackpot {
+    position: relative;
+  }
+  .circle1,
+  .circle2,
+  .circle3,
+  .circle4 {
+    position: absolute;
+    border-radius: 50%;
+    background-color: #fff7e2;
+    border: 1px solid #555;
+    width: 15px;
+    height: 15px;
+  }
+
+  .circle1 {
+    top: 12px;
+    left: 12px;
+  }
+
+  .circle2 {
+    top: 12px;
+    right: 12px;
+  }
+
+  .circle3 {
+    bottom: 12px;
+    left: 12px;
+  }
+
+  .circle4 {
+    bottom: 12px;
+    right: 12px;
+  }
+
+  .con1 {
+    background-color: #ff7e7e;
+    border: 1px solid #555;
+    border-radius: 10px;
+    width: 570px;
+    height: 370px;
+    margin-top: 28px;
+    margin-left: 38px;
+    position: relative;
+  }
+
+  .sign {
+    position: absolute;
+    width: 545px;
+    height: 120px;
+    background-color: #fff7e2;
+    border: 1px solid #555;
+    border-radius: 10px;
+    margin-top: 12px;
+    margin-left: 12px;
+  }
+
+  .sign {
+    position: relative;
+  }
+
+  .c1,
+  .c2,
+  .c3,
+  .c4 {
+    position: absolute;
+    width: 9px;
+    height: 9px;
+    border-radius: 50%;
+    background-color: #ffb5b5;
+    border: 1px solid #555;
+  }
+
+  .c1 {
+    top: 10px;
+    left: 10px;
+  }
+
+  .c2 {
+    top: 10px;
+    right: 10px;
+  }
+
+  .c3 {
+    bottom: 10px;
+    left: 10px;
+  }
+
+  .c4 {
+    bottom: 10px;
+    right: 10px;
+  }
+
+  .title {
+    color: #ff7e7e;
+    text-align: center;
+    font-family: "DNFBitBitv2";
+    font-size: 28px;
+    font-style: normal;
+    line-height: 40px;
+    margin-top: 20px;
+    text-shadow: -2px 0 #555, 0 2px #555, 2px 0 #555, 0 -2px #555;
+  }
+
+  .title2 {
+    color: #ff7e7e;
+    text-align: center;
+    font-family: "DNFBitBitv2";
+    font-size: 28px;
+    font-style: normal;
+    line-height: 40px;
+    margin-top: 0px;
+    text-shadow: -2px 0 #555, 0 2px #555, 2px 0 #555, 0 -2px #555;
+  }
+
+  .machine {
+    position: absolute;
+    width: 545px;
+    height: 210px;
+    background-color: #fff7e2;
+    border: 1px solid #555;
+    border-radius: 10px;
+    margin-top: 10px;
+    margin-left: 12px;
+  }
+
+  .spin {
+    display: flex;
+    width: 470px;
+    height: 170px;
+    background-color: #ffb5b5;
+    border-radius: 10px;
+    border: 2px solid #555;
+    align-items: center;
+    justify-content: center;
+    margin-top: 20px;
+    margin-left: 36px;
+    margin-right: 36px;
+    margin-bottom: 20px;
+    font-size: 70px;
+    overflow: hidden;
+    position: relative;
+  }
+
+  @keyframes rotate_CD {
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+
+  #firstIcon {
+    z-index: 1;
+    animation: trans 1.5s linear infinite;
+    position: absolute;
+    text-align: center;
+    left: 20px;
+    background-color: white;
+    border: 1px solid #555;
+    width: 130px;
+  }
+
+  #secondIcon {
+    z-index: 1;
+    animation: trans 1.7s linear infinite;
+    position: absolute;
+    text-align: center;
+    left: 170px;
+    background-color: white;
+    border: 1px solid #555;
+    width: 130px;
+  }
+
+  #thirdIcon {
+    z-index: 1;
+    animation: trans 1.3s linear infinite;
+    position: absolute;
+    text-align: center;
+    left: 320px;
+    background-color: white;
+    border: 1px solid #555;
+    width: 130px;
+  }
+
+  #reel_container_first {
+    background-color: white;
+    border-left: 1px solid #555;
+    border-right: 1px solid #555;
+    height: 230px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    flex-shrink: 0;
+    z-index: 2;
+    position: absolute;
+    left: 20px;
+    width: 130px;
+  }
+  #reel_container_second {
+    background-color: white;
+    border-left: 1px solid #555;
+    border-right: 1px solid #555;
+    height: 230px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    flex-shrink: 0;
+    z-index: 2;
+    position: absolute;
+    left: 170px;
+    width: 130px;
+  }
+  #reel_container_third {
+    background-color: white;
+    border-left: 1px solid #555;
+    border-right: 1px solid #555;
+    height: 230px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    flex-shrink: 0;
+    z-index: 2;
+    position: absolute;
+    left: 320px;
+    width: 130px;
+  }
+
+  @keyframes trans {
+    0% {
+      transform: translateY(-25%);
+    }
+    100% {
+      transform: translateY(25%);
+    }
+  }
+
+  @keyframes flow {
+    0% {
+      transform: translatex(100%);
+    }
+    100% {
+      transform: translateX(-200%);
+    }
+  }
+
+  .jackpot_machine {
+    display: flex;
+  }
+
+  #start {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: #ff7e7e;
+    border: 2px solid #555;
+    margin-left: 14px;
+    margin-top: 100px;
+    cursor: pointer;
+    font-size: 10px;
+    transform: rotate(0deg);
+    /*transition: transform 0.1s ease;*/
+    z-index: 3;
+  }
+
+  #start {
+    position: relative;
+  }
+
+  /*.startBtn.clicked #start {
+  z-index: 3;
+  }*/
+
+  .thin_stick {
+    width: 10px;
+    height: 190px;
+    background-color: #ffb5b5;
+    border: 2px solid #555;
+    margin-left: 30px;
+    margin-bottom: -10px;
+    margin-top: -10px;
+    transform-origin: 100%;
+    z-index: 2;
+  }
+
+  .thin_stick {
+    position: relative;
+  }
+
+  .start_bar {
+    transform-origin: bottom;
+    transition: transform 0.5s ease; /*추가*/
+  }
+
+  .startBtn.clicked .start_bar {
+    transform: rotate(10deg);
+  }
+
+  .bottom_stick {
+    width: 79px;
+    height: 68px;
+    margin-left: -10px;
+    border: 2px solid #555;
+    border-radius: 8px;
+    background-color: #ffb5b5;
+    z-index: 2;
+  }
+
+  .bottom_stick {
+    position: relative; /* 추가 */
+  }
+
+  .explain_click {
+    position: absolute;
+    left: 1010px;
+    top: 85px;
+    padding: 10px;
+    width: 60px;
+    height: 60px;
+    color: #555;
+    border-radius: 10px;
+    background-color: #ffb5b5;
+    animation: motion 0.5s linear 0s infinite alternate;
+    font-weight: 600;
+  }
+
+  @keyframes motion {
+    0% {
+      margin-left: 30px;
+    }
+    100% {
+      margin-left: 40px;
+    }
+  }
+
+  .explain_click:after {
+    content: "";
+    position: absolute;
+    top: 21px;
+    left: -20px;
+    border-right: 30px solid #ffb5b5;
+    border-top: 10px solid transparent;
+    border-bottom: 10px solid transparent;
+  }
+
+  .start_explain {
+    display: flex;
+  }
+  .lyrics-pop {
+    position: absolute;
+    left: -150px;
+    top: -160px;
+    padding: 15px 10px;
+    width: 254px;
+    height: 115px;
+    border-radius: 10px;
+    background-image: url(./image_1/lyrics-pop.png);
+    animation: lyricsmotion 1s linear 0s infinite alternate;    
+  }
+
+  @keyframes lyricsmotion {
+    0% {
+      top: -160px;
+    }
+    100% {
+      top: -140px;
+    }
+  }
+
+ 
+
+  .songLyrics{
+    display: flex;
+      color: #555;
+      text-align: center;
+      font-family: "DNFBitBitv2";
+      font-size: 14px;
+      font-style: normal;
+      font-weight: 400;
+      line-height: normal;
+      justify-content: center;
+      align-items: center;
+      gap: 10px;   
+  }
+
+  .star-pop {
+    position: absolute;
+    left: 462px;
+    top: 440px;
+    
+    width: 254px;
+    height: 126px;
+    border-image: none;
+    animation: starsmotion 1.2s linear 0s infinite alternate;
+    background-image: url(./image_1/star-pop.png);
+    
+  }
+
+  @keyframes starsmotion {
+    0% {
+      top: 440px;
+    }
+    100% {
+      top: 460px;
+    }
+  }
+
+  
+
+  #star{
+      font-size: 50px;
+      text-align: center;
+      position: relative;
+      margin-top: 45px;
+  }
+
+  /* 추가 */
+  .glitterImage-1 {
+    position: absolute; /* 위치 지정을 위해 position을 추가 */
+    background-image: url("./image_1/glitter.png");
+    width: 50px;
+    height: 70px;
+    border-image: none;
+    top: 48vh;
+    left: 10vw;
+    z-index: 5;
+    animation: glitterAnimation 1s infinite alternate; /* 애니메이션 효과 설정 */
+    animation-delay: 0s;
+  }
+
+  /* 애니메이션 효과 정의 */
+  @keyframes glitterAnimation {
+    0% {
+      transform: scale(0.7); /* 초기 크기 */
+    }
+    100% {
+      transform: scale(1.1); /* 최종 크기 */
+    }
+  }
+
+  .glitterImage-2 {
+    position: absolute; /* 위치 지정을 위해 position을 추가 */
+    background-image: url("./image_1/glitter.png");
+    width: 50px;
+    height: 70px;
+    border-image: none;
+    top: 11vh;
+    left: 45vw;
+    z-index: 5;
+    animation: glitterAnimation 1s infinite alternate; /* 애니메이션 효과 설정 */
+    animation-delay: 0.2s;
+  }
+
+  /* 애니메이션 효과 정의 */
+  @keyframes glitterAnimation {
+    0% {
+      transform: scale(0.3); /* 초기 크기 */
+    }
+    100% {
+      transform: scale(0.8); /* 최종 크기 */
+    }
+  }
+  .glitterImage-3 {
+    position: absolute; /* 위치 지정을 위해 position을 추가 */
+    background-image: url("./image_1/glitter.png");
+    width: 50px;
+    height: 70px;
+    border-image: none;
+    top: 16vh;
+    right: 18vw;
+    z-index: 5;
+    animation: glitterAnimation 1s infinite alternate; /* 애니메이션 효과 설정 */
+    animation-delay: 0.4s;
+  }
+
+  /* 애니메이션 효과 정의 */
+  @keyframes glitterAnimation {
+    0% {
+      transform: scale(0.7); /* 초기 크기 */
+    }
+    100% {
+      transform: scale(0.3); /* 최종 크기 */
+    }
+  }
+
+  .glitterImage-4 {
+    position: absolute; /* 위치 지정을 위해 position을 추가 */
+    background-image: url("./image_1/glitter.png");
+    width: 50px;
+    height: 70px;
+    border-image: none;
+    bottom: 11vh;
+    left: 34vw;
+    z-index: 5;
+    animation: glitterAnimation 1s infinite alternate; /* 애니메이션 효과 설정 */
+    animation-delay: 0.6s;
+  }
+
+  /* 애니메이션 효과 정의 */
+  @keyframes glitterAnimation {
+    0% {
+      transform: scale(1.2); /* 초기 크기 */
+    }
+    100% {
+      transform: scale(0.7); /* 최종 크기 */
+    }
+  }
+
+  .glitterImage-5 {
+    position: absolute; /* 위치 지정을 위해 position을 추가 */
+    background-image: url("./image_1/glitter.png");
+    width: 50px;
+    height: 70px;
+    border-image: none;
+    bottom: 20vh;
+    right: 14vw;
+    z-index: 5;
+    animation: glitterAnimation 1s infinite alternate; /* 애니메이션 효과 설정 */
+    animation-delay: 0.8s;
+  }
+
+  /* 애니메이션 효과 정의 */
+  @keyframes glitterAnimation {
+    0% {
+      transform: scale(0.3); /* 초기 크기 */
+    }
+    100% {
+      transform: scale(0.7); /* 최종 크기 */
+    }
+  }
+
+
+  #Containers {
+    padding: 10px;
+    width: calc( 100% - 10vw );
+    height: 250px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: -10;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    align-content: center;
+  }
+
+  .container {
+    width: 22px;
+    background-color: #FFEAD2;
+  }
+
+  .container:nth-child(1), .container:nth-child(9), .container:nth-child(21), .container:nth-child(28), .container:nth-child(40) {
+    height: 55px;
+  }
+  .container:nth-child(6), .container:nth-child(10), .container:nth-child(13), .container:nth-child(22), .container:nth-child(31) {
+    height: 131px;
+  }
+  .container:nth-child(2), .container:nth-child(17), .container:nth-child(25), .container:nth-child(23), .container:nth-child(33) {
+    height: 93px;
+  }
+  .container:nth-child(4), .container:nth-child(14), .container:nth-child(18), .container:nth-child(32), .container:nth-child(35) {
+    height: 221px;
+  }
+  .container:nth-child(3), .container:nth-child(11), .container:nth-child(26), .container:nth-child(30), .container:nth-child(39) {
+    height: 167px;
+  }
+  .container:nth-child(7), .container:nth-child(15), .container:nth-child(19), .container:nth-child(29), .container:nth-child(38) {
+    height: 193px;
+  }
+  .container:nth-child(8), .container:nth-child(16), .container:nth-child(27), .container:nth-child(24), .container:nth-child(36) {
+    height: 76px;
+  }
+  .container:nth-child(5), .container:nth-child(12), .container:nth-child(20), .container:nth-child(34), .container:nth-child(37) {
+    height: 250px;
+  }
+
+  @keyframes audioMotion1 {
+    0% {
+      transform: scaleY(0%);
+    }
+    100% {
+      transform: scaleY(100%);
+    }
+  }
+
+
+  .container:nth-child(1), .container:nth-child(7), .container:nth-child(13), .container:nth-child(20), .container:nth-child(29),.container:nth-child(32),.container:nth-child(40) {
+    animation: audioMotion1 0.8s linear 0s infinite alternate;
+  }
+  .container:nth-child(6), .container:nth-child(11), .container:nth-child(18), .container:nth-child(22), .container:nth-child(26),.container:nth-child(31) {
+    animation: audioMotion1 0.5s linear 0s infinite alternate;
+  }
+  .container:nth-child(3), .container:nth-child(8), .container:nth-child(12), .container:nth-child(17), .container:nth-child(25),.container:nth-child(33),.container:nth-child(37) {
+    animation: audioMotion1 1s linear 0s infinite alternate;
+  }
+  .container:nth-child(4), .container:nth-child(9), .container:nth-child(15), .container:nth-child(19), .container:nth-child(24), .container:nth-child(27),.container:nth-child(34),.container:nth-child(38) {
+    animation: audioMotion1 0.3s linear 0s infinite alternate;
+  }
+  .container:nth-child(5), .container:nth-child(10), .container:nth-child(14), .container:nth-child(16), .container:nth-child(23), .container:nth-child(28),.container:nth-child(35),.container:nth-child(39) {
+    animation: audioMotion1 0.7s linear 0s infinite alternate;
+  }
+
+  .container:nth-child(36), .container:nth-child(21), .container:nth-child(30), .container:nth-child(2) {
+    animation: audioMotion1 0.4s linear 0s infinite alternate;
+  }
+
